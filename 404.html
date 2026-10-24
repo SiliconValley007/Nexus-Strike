@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+    <meta name="theme-color" content="#07090f" />
+    <title>NEXUS STRIKE</title>
+    <style>
+      html,body{margin:0;height:100%;background:#07090f;color:#e8edf7;font-family:ui-sans-serif,system-ui,sans-serif;display:flex;align-items:center;justify-content:center}
+      a{color:#5ad6ff;letter-spacing:.12em;text-decoration:none}
+    </style>
+  </head>
+  <body>
+    <p><a id="home" href="./">NEXUS STRIKE</a></p>
+    <script>
+      (function () {
+        var home = location.pathname.split("/").slice(0, 2).join("/") + "/";
+        if (home === "//") home = "/";
+        var a = document.getElementById("home");
+        if (a) a.setAttribute("href", home);
+        var p = location.pathname;
+        if (p !== home && p !== home + "index.html" && p + "/" !== home) {
+          location.replace(home);
+        }
+      })();
+    </script>
+  </body>
+</html>
